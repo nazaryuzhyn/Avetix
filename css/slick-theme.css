@@ -63,19 +63,7 @@
     opacity: .25;
 }
 
-.slick-prev:before,
-.slick-next:before
-{
-    font-family: 'slick';
-    font-size: 20px;
-    line-height: 1;
 
-    opacity: .75;
-    color: white;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 
 .slick-prev
 {
@@ -86,14 +74,7 @@
     right: -25px;
     left: auto;
 }
-.slick-prev:before
-{
-    content: '←';
-}
-[dir='rtl'] .slick-prev:before
-{
-    content: '→';
-}
+
 
 .slick-next
 {
@@ -104,14 +85,7 @@
     right: auto;
     left: -25px;
 }
-.slick-next:before
-{
-    content: '→';
-}
-[dir='rtl'] .slick-next:before
-{
-    content: '←';
-}
+
 
 /* Dots */
 .slick-dotted.slick-slider

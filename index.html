@@ -8,6 +8,8 @@
 	<title>AVETIXstudio - Разработка и продвижение сайтов</title>
 	<link rel="stylesheet" href="css/bootstrap.min.min.css">
 	<link rel="stylesheet" href="css/mdb.min.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -32,10 +34,37 @@
 					C262.3-2,249.6-1.9,241.8,5.9z"/>
 				</g>
 			</symbol>
+			<symbol id="arrow-slide" width="13" height="13" viewBox="0 0 443.52 443.52">
+				<g>
+					<path d="M336.226,209.591l-204.8-204.8c-6.78-6.548-17.584-6.36-24.132,0.42c-6.388,6.614-6.388,17.099,0,23.712l192.734,192.734
+					L107.294,414.391c-6.663,6.664-6.663,17.468,0,24.132c6.665,6.663,17.468,6.663,24.132,0l204.8-204.8
+					C342.889,227.058,342.889,216.255,336.226,209.591z"/>
+				</g>
+			</symbol>
+			<symbol id="facebook" width="20" height="20" viewBox="0 0 512 512">
+				<g>
+					<path d="M288,176v-64c0-17.664,14.336-32,32-32h32V0h-64c-53.024,0-96,42.976-96,96v80h-64v80h64v256h96V256h64l32-80H288z"/>
+				</g>
+			</symbol>
+			<symbol id="twiter" width="20" height="20" viewBox="0 0 512 512">
+				<g>
+					<path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+					c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+					c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+					c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+					c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+					c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+					C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+					C480.224,136.96,497.728,118.496,512,97.248z"/>
+				</g>
+			</symbol>
 		</svg>
 	</div>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar py-4">
+			<div class="progress-container">
+				<div class="progress-bar" id="progressBar"></div>
+			</div>
 			<div class="container">
 				<a class="navbar-brand p-0" href="/"><div class="navbar-brand__logo"></div></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -60,7 +89,7 @@
 							<a class="nav-link" href="#">Контакты</a>
 						</li>
 						<li class="nav-item pl-4">
-							<ul class="navbar-nav ml-auto">
+							<ul class="navbar-nav nav-lang ml-auto">
 								<li class="nav-item">
 									<a class="nav-link link-lang" href="#">PL</a>
 								</li>
@@ -76,7 +105,7 @@
 		<div class="view">
 			<div class="mask">
 				<div class="container-fluid d-flex align-items-center justify-content-center h-100">
-					<div class="col-8 pl-5">
+					<div class="view-col col-12 col-lg-10 col-xl-8 pl-5">
 						<h1 class="text-white title-text">РАЗРАБОТКА И<br>ПРОДВИЖЕНИЕ САЙТОВ</h1>
 						<p class="title-text-description">Профессиональное создание и продвижение<br>интернет ресурсов</p>
 						<div class="d-flex wrap-button">
@@ -97,7 +126,7 @@
 	</header>
 	<main>
 		<section class="wrap-about container d-flex align-items-center justify-content-center h-100">
-			<div class="col-6">
+			<div class="col-xl-6">
 				<p class="text-about__title m-0">Немного <span>о нас</span></p>
 				<p class="text-about__subtitle m-0">Создаем то, что приносит пользу</p>
 				<p class="text-about__decription pr-5 m-0">
@@ -107,7 +136,7 @@
 					3) Прозрачность и последовательность сотрудничества. Каждый проект независимо от сложности и масштабов, разрабатывается в индивидуальном порядке. Наши клиенты могут быть уверены в том, что их проект будет выполнен в установленные сроки и по заранее утвержденным ценам. Все проекты для нас важные, а клиенты одинаково ценные.
 				</p>
 			</div>
-			<div class="col-6">
+			<div class="col-xl-6">
 				<img src="img/svg/web-design-and-development.svg" class="img-fluid pl-3" alt="web-design-and-development">
 			</div>
 		</section>
@@ -119,66 +148,27 @@
 			</div>
 		</section>
 		<div class="container-fluid wrap-carousel position-relative">
-			<div id="carousel-example" class="carousel slide carousel-wrap" data-ride="carousel">
-				<div class="carousel-inner row justify-content-center w-100 mx-auto" role="listbox">
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-						<img src="img/carousel/html.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="html">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/CSS.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="css">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/JS.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="js">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/php.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="php">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/React.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="React">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/bootstrap.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="bootstrap">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/wordpress.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="wordpress">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/joomla.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="joomla">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/opencart.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="opencart">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/ocStore.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="ocStore">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/maxystore.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="maxystore">
-					</div>
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-						<img src="img/carousel/cscart.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="cscart">
-					</div>
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-				<div class="carousel__control-wrap">
-					<div class="carousel__control-item-left">
-						<svg style="display: block" viewBox="0 0 7.3 13" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-							<desc>Left</desc>
-							<polyline fill="none" stroke="#222222" stroke-linejoin="butt" stroke-linecap="butt" stroke-width="1" points="0.5,0.5 6.5,6.5 0.5,12.5"></polyline>
-						</svg>
-					</div>
-				</div>
-			</a>
-			<a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-				<div class="carousel__control-wrap">
-					<div class="carousel__control-item-right">
-						<svg style="display: block" viewBox="0 0 7.3 13" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-							<desc>Left</desc>
-							<polyline fill="none" stroke="#222222" stroke-linejoin="butt" stroke-linecap="butt" stroke-width="1" points="0.5,0.5 6.5,6.5 0.5,12.5"></polyline>
-						</svg>
-					</div>
-				</div>
-			</a>
+			<img src="img/carousel/html.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="html">
+			<img src="img/carousel/CSS.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="css">
+			<img src="img/carousel/JS.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="js">
+			<img src="img/carousel/php.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="php">
+			<img src="img/carousel/React.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="React">
+			<img src="img/carousel/bootstrap.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="bootstrap">
+			<img src="img/carousel/wordpress.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="wordpress">
+			<img src="img/carousel/joomla.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="joomla">
+			<img src="img/carousel/opencart.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="opencart">
+			<img src="img/carousel/ocStore.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="ocStore">
+			<img src="img/carousel/maxystore.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="maxystore">
+			<img src="img/carousel/cscart.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="cscart">
+			<img src="img/carousel/Shop-Script.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="Shop-Script">
+			<img src="img/carousel/Prestashop.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="Prestashop">
+			<img src="img/carousel/netcat.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="netcat">
+			<img src="img/carousel/modx.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="modx">
+			<img src="img/carousel/Drupal.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="Drupal">
+			<img src="img/carousel/BITRIX.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="BITRIX">
+			<img src="img/carousel/Magento.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="Magento">
+			<img src="img/carousel/phpBB.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="phpBB">
+			<img src="img/carousel/Simple.png" class="img-fluid mx-auto d-block" width="160" height="160" alt="Simple">
 		</div>
 		<div class="line-block-2"></div>
 		<section class="contacts-wrap">
@@ -188,7 +178,7 @@
 					<div class="text-contact__subtitle">Остались вопросы? Смело задавайте их</div>
 				</div>
 				<div class="container row mx-auto col-12 contacts-item">
-					<div class="col-4 mr-5">
+					<div class="contact-info-block col-xl-4 mr-5">
 						<p class="contact-info">
 							<span>Польша</span><br>
 							+ 48 537 450 501<br>
@@ -204,8 +194,8 @@
 							biuro@wbm-group.pl
 						</p>
 					</div>
-					<div class="col-7 ml-5">
-						<form action="#" method="POST">
+					<div class="wrap-form-message col-xl-7 ml-5">
+						<form class="form-message" action="#" method="POST">
 							<div class="form-group position-relative">
 								<input class="form-control input-email" type="text" required>
 								<span class="label-form">E-mail</span>
@@ -228,7 +218,7 @@
 		</section>
 	</main>
 	<footer>
-		<div class="container-fluid d-flex align-items-center justify-content-between h-100">
+		<div class="footer-wrap container-fluid d-flex align-items-center justify-content-between h-100">
 			<div class="footer-company pl-4">
 				© 2020 WBM Group
 			</div>
@@ -262,13 +252,77 @@
 			</div>
 		</div>
 	</footer>
+
+	<div class="wrap-phone hidden">
+		<div class="wrap-phone__text">Укажите свой номер телефона и мы с вами свяжемся!</div>
+		<form class="form-phone" action="#" method="POST">
+			<div class="form-group">
+				<input class="form-control input-phone" type="phone" placeholder="+48 000 000 000" required>
+			</div>
+			<div class="form-group">
+				<button class="btn-tell-me" type="submit">Позвоните мне</button>
+			</div>
+		</form>
+		<div class="wrap-phone__subtext">
+			Или вы можете позвонить нам сами:<br>
+			+ 48 537 450 501
+		</div>
+	</div>
+	<div class="phone icon-phone-blue">
+		<svg class="phone__icon" style="fill:#ffffff;" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 19.3 20.1">
+			<path d="M4.6 7.6l-.5-.9 2-1.2L4.6 3l-2 1.3-.6-.9 2.9-1.7 2.6 4.1"></path>
+			<path d="M9.9 20.1c-.9 0-1.9-.3-2.9-.9-1.7-1-3.4-2.7-4.7-4.8-3-4.7-3.1-9.2-.3-11l.5.9C.2 5.7.4 9.7 3 13.9c1.2 2 2.8 3.6 4.3 4.5 1.1.6 2.7 1.1 4.1.3l1.9-1.2L12 15l-2 1.2c-1.2.7-2.8.3-3.5-.8l-3.2-5.2c-.7-1.2-.4-2.7.8-3.5l.5.9c-.7.4-.9 1.3-.5 2l3.2 5.2c.4.7 1.5.9 2.2.5l2.8-1.7 2.6 4.1-2.8 1.7c-.7.5-1.4.7-2.2.7zM13.7 11.3l-.9-.3c.4-1.1.2-2.2-.4-3.1-.6-1-1.7-1.6-2.8-1.7l.1-1c1.5.1 2.8.9 3.6 2.1.7 1.2.9 2.7.4 4z"></path>
+			<path d="M16.5 11.9l-1-.3c.5-1.8.2-3.7-.8-5.3-1-1.6-2.7-2.6-4.7-2.9l.1-1c2.2.3 4.2 1.5 5.4 3.3 1.2 1.9 1.6 4.1 1 6.2z"></path>
+			<path d="M18.9 12.5l-1-.3c.7-2.5.2-5.1-1.1-7.2-1.4-2.2-3.7-3.6-6.3-4l.1-1c2.9.4 5.4 2 7 4.4 1.6 2.4 2.1 5.3 1.3 8.1z"></path>
+		</svg>
+		<svg class="close__icon hidden" width="16px" height="16px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<g stroke="none" stroke-width="1" fill="#000" fill-rule="evenodd">
+			  <rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
+			  <rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
+			</g>
+		  </svg>
+	</div>
+
+	<div class="wrap-share">
+		<div class="share-list">
+			<div class="share-item-fb">
+				<a href="#">
+					<svg class="icon__facebook">
+						<use xlink:href="#facebook"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="share-item-tw">
+				<a href="#">
+					<svg class="icon__twiter">
+						<use xlink:href="#twiter"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/mdb.min.js"></script>
 	<script src="js/empty-input.js"></script>
-	<script src="js/carousel.js"></script>
+	<!-- <script src="js/carousel.js"></script> -->
 	<script src="js/to-bottom.js"></script>
 	<script src="js/to-top.js"></script>
+	<script src="js/form-phone.js"></script>
+	<script src="js/progress-bar.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script>
+		$('.wrap-carousel').slick({
+			slidesToShow: 6,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+			prevArrow: '<div class="prev-slide"><svg class="icon__prev"><use xlink:href="#arrow-slide"></use></svg></div>',
+			nextArrow: '<div class="next-slide"><svg class="icon__next"><use xlink:href="#arrow-slide"></use></svg></div>',
+		});
+	</script>
 </body>
 </html>
